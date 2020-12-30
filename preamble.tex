@@ -9,7 +9,7 @@
 
 \usepackage{tocloft}
 \renewcommand{\cftsecfont}{\color{black}}
-\renewcommand{\cftsubsecfont}{\color{magenta!70!black}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \usepackage{titlesec}
 
 %microtype, font, color support, cl
@@ -100,8 +100,11 @@
 %link colors
 \hypersetup{
  linktocpage,
- colorlinks,
 }
+\renewcommand{\contentsname}{\hfill Table of Contents \hfill}
+\let \savenumberline \numberline
+\def \numberline#1{\savenumberline{#1.}}
+
 
 %cool section divider
 \newcommand{\orbreak}{
@@ -111,5 +114,3 @@
 \end{center}
 }
 
-%tis me
-\author{Simon Xiang}
