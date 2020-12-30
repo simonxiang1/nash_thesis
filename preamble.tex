@@ -1,0 +1,115 @@
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathrsfs, mathtools}
+\usepackage{hyperref}
+\usepackage[capitalize, noabbrev]{cleveref}
+\usepackage{xfrac}
+\usepackage{tikz-cd}
+\usepackage{float}
+\usepackage{enumitem}
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\color{black}}
+\renewcommand{\cftsubsecfont}{\color{magenta!70!black}}
+\usepackage{titlesec}
+
+%microtype, font, color support, cl
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{–\thepage{}–}
+\rhead{}
+\cfoot{} 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+\pdfsuppresswarningpagegroup=1
+
+%good stuff
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{prob}{Problem}
+\theoremstyle{definition}
+\newtheorem*{note}{Note}
+\newtheorem*{claim}{Claim}
+\newtheorem*{conclusion}{Conclusion}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}\begin{proof}[Solution]}
+  {\end{proof}}
+
+%named theorems!
+\swapnumbers
+\theoremstyle{plain}
+\newcommand{\thistheoremname}{}
+%numbered
+\newtheorem{genericthm}[theorem]{\thistheoremname}
+\newenvironment{namedthmnum}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+         \begin{genericthm}}
+        {\end{genericthm}}
+%unnumbered
+\newtheorem*{genericthm*}{\thistheoremname}
+\newenvironment{namedthm}[1]
+  {\renewcommand{\thistheoremname}{#1}%
+         \begin{genericthm*}}
+               {\end{genericthm*}}
+%general thing (definition, example, etc)
+\theoremstyle{definition}
+\newcommand{\thisthingname}{}
+\newtheorem{genericthing}[definition]{\thisthingname}
+\newenvironment{namedthingnum}[1]
+  {\renewcommand{\thisthingname}{#1}%
+         \begin{genericthing}}
+        {\end{genericthing}}
+%unnumbered thing
+\newtheorem*{genericthing*}{\thisthingname}
+\newenvironment{namedthing}[1]
+  {\renewcommand{\thisthingname}{#1}%
+         \begin{genericthing*}}
+               {\end{genericthing*}}
+
+%self explanatory
+\newcommand\N{\ensuremath{\mathbb{N}}}
+\newcommand\R{\ensuremath{\mathbb{R}}}
+\newcommand\Z{\ensuremath{\mathbb{Z}}}
+\renewcommand\O{\ensuremath{\emptyset}}
+\newcommand\Q{\ensuremath{\mathbb{Q}}}
+\newcommand\C{\ensuremath{\mathbb{C}}}
+\newcommand\F{\ensuremath{\mathbb{F}}}
+\newcommand\E{\ensuremath{\mathbb{E}}}
+
+%essential (thanks Dr. Urbanski)
+\renewcommand\qedsymbol{$\boxtimes$}
+
+%link colors
+\hypersetup{
+ linktocpage,
+ colorlinks,
+}
+
+%cool section divider
+\newcommand{\orbreak}{
+\begin{center}
+    \adforn{25}\adforn{14}\adforn{53}
+ \vspace{0.2cm}
+\end{center}
+}
+
+%tis me
+\author{Simon Xiang}
