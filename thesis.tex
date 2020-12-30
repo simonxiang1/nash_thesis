@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,oneside]{book}
+\documentclass[a4paper,11pt,oneside]{article}
 \input{preamble.tex}
 \begin{document}
 \begin{titlepage}
@@ -21,13 +21,15 @@
  
     \end{center}
 \end{titlepage}
+
 \include{preface.tex}
 \include{abstract.tex}
+
 \setcounter{page}{0}
 \tableofcontents
 \thispagestyle{empty}
 \clearpage
-    %include lecture files
-ok
-    %add and swap as necessary
+
+\input{contents.tex}
+
 \end{document}
