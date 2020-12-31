@@ -1,3 +1,25 @@
 \section{Introduction}
-Von Neumann and Morgenstern have developed a very fruitful theory of two-person
-\section{moreok}
+\hspace{\parindent}Von Neumann and Morgenstern have developed a very fruitful theory of two-person zero-sum games in their book \emph{Theory of Games and Economic Behavior} \cite{1}. This books also contains a theory of $n$-person games of a type which we would call cooperative. This theory is based on an analysis of the interrelationships of the various coalitions which can be formed by the players of the game.
+
+Our theory, in contradistinction, is based on the \emph{absence} of coalitions in that it is assumed that each participant acts independently, without collaboration or communication with any of the others.
+
+The notion of an \emph{equilibrium} point is the basic ingredient in our theory. This notion yields a generalization of the concept of the solution of a two-person zero-sum game. It turns out that the set of equilibrium points of a two-person zero-sum game is simply the set of all pairs of opposing ``good strategies''.
+
+In the immediately following sections we shall define equilibrium points and prove that a finite non-cooperative game always has at least one equilibrium point. We shall also introduce the notions of solvability and strong solvability of a non-cooperative game and prove a theorem on the geometrical structure of the set of equilibrium points of a solvable game.
+
+As an example of the application of our theory we include a solution of a simplified three person poker game.
+
+The motivation and interpretation of the mathematical concepts employed in the theory are reserved for discussion on a special section of this paper.
+
+\newpage
+\section{Formal Definitions and Terminology}
+\hspace{\parindent}In this section we define the basic concepts of this paper and set up standard terminology and notation. Important definitions will be preceeded by a subtitle indicating the concept defined\footnote{We actually use \textbf{boldface} for definitions instead, but this note on the subtitles is left in to preserve the wording of the original.}. The non-cooperative idea will be implicit, rather than explicit, below.
+\begin{definition}[Finite Game]
+    For us an $\mathbf n$\textbf{-person game} will be a set of $n$ \textbf{players}, or \textbf{positions}, each with an associated finite of \textbf{pure strategies}; and corresponding to each player, $i$, a \textbf{pay-off function}, $P_i $, which maps the set of all $n$-tuples of pure strategies into the real numberes. When we use the word $\mathbf n$\textbf{-tuples} we shall always mean a set of $n$ items, with each item associated with a different player.
+\end{definition}
+\begin{definition}[Mixed Strategy, $S_i $]
+   A \textbf{mixed strategy} of player $i$ will be a collection of non-negative numbers which have unit sum and are in one to one correspondence with his pure strategies.
+\end{definition}
+   We write $S_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha } $ with $\sum_{\alpha }^{} c_{i\alpha }=1 $ and $c_{i\alpha }\geq 0$ to represent such a mixed strategy, where the $\pi_{i\alpha }$'s are the pure strategies of player $i$. We regard the $S_i $'s as points in a simplex whose vertices are the $\pi_{i\alpha }$'s. This simplex may be regarded as a convex subset of a real vector space, giving us a natural process of linear combination for the mixed strategies.
+
+   We shall use the suffixes 
