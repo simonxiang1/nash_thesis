@@ -1,3 +1,5 @@
+\setcounter{page}{1}
+
 \section{Introduction}
 \hspace{\parindent}Von Neumann and Morgenstern have developed a very fruitful theory of two-person zero-sum games in their book \emph{Theory of Games and Economic Behavior} \cite{1}. This books also contains a theory of $n$-person games of a type which we would call cooperative. This theory is based on an analysis of the interrelationships of the various coalitions which can be formed by the players of the game.
 
@@ -11,15 +13,78 @@ As an example of the application of our theory we include a solution of a simpli
 
 The motivation and interpretation of the mathematical concepts employed in the theory are reserved for discussion on a special section of this paper.
 
+\thispagestyle{empty}
+\clearpage
+
 \newpage
+\setcounter{page}{2}
 \section{Formal Definitions and Terminology}
 \hspace{\parindent}In this section we define the basic concepts of this paper and set up standard terminology and notation. Important definitions will be preceeded by a subtitle indicating the concept defined\footnote{We actually use \textbf{boldface} for definitions instead, but this note on the subtitles is left in to preserve the wording of the original.}. The non-cooperative idea will be implicit, rather than explicit, below.
 \begin{definition}[Finite Game]
     For us an $\mathbf n$\textbf{-person game} will be a set of $n$ \textbf{players}, or \textbf{positions}, each with an associated finite of \textbf{pure strategies}; and corresponding to each player, $i$, a \textbf{pay-off function}, $P_i $, which maps the set of all $n$-tuples of pure strategies into the real numberes. When we use the word $\mathbf n$\textbf{-tuples} we shall always mean a set of $n$ items, with each item associated with a different player.
 \end{definition}
-\begin{definition}[Mixed Strategy, $S_i $]
+\begin{definition}[Mixed Strategy, $s_i $]
    A \textbf{mixed strategy} of player $i$ will be a collection of non-negative numbers which have unit sum and are in one to one correspondence with his pure strategies.
 \end{definition}
-   We write $S_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha } $ with $\sum_{\alpha }^{} c_{i\alpha }=1 $ and $c_{i\alpha }\geq 0$ to represent such a mixed strategy, where the $\pi_{i\alpha }$'s are the pure strategies of player $i$. We regard the $S_i $'s as points in a simplex whose vertices are the $\pi_{i\alpha }$'s. This simplex may be regarded as a convex subset of a real vector space, giving us a natural process of linear combination for the mixed strategies.
+   We write $s_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha } $ with $\sum_{\alpha }^{} c_{i\alpha }=1 $ and $c_{i\alpha }\geq 0$ to represent such a mixed strategy, where the $\pi_{i\alpha }$'s are the pure strategies of player $i$. We regard the $s_i $'s as points in a simplex whose vertices are the $\pi_{i\alpha }$'s. This simplex may be regarded as a convex subset of a real vector space, giving us a natural process of linear combination for the mixed strategies.
 
-   We shall use the suffixes 
+   We shall use the suffixes $i,j,k$ for players and $\alpha ,\beta ,\gamma $ to indicate various pure strategies of a player. The symbols $s_i ,t_i ,$ and $v_i $, etc.\ will indicate mixed strategies; $\pi_{i\alpha }$ will indicate the $i$th player's $\alpha $th pure strategy, etc.
+
+   \begin{definition}[Pay-off functions, $P_i $]
+       The pay-off function, $P_i $, used in the definition of a finite game above, has a unique extension to the $n$-tuples of mixed strategies which is linear in the mixed strategy of each player [$n$-linear]. This extension we shall also denote $P_i $, writing $P_i (s_1,s_2,\cdots ,s_n )$.
+   \end{definition}
+   We shall write $\mathcal{s} $ or $\mathcal{t} $ to denote an $n$-tuble of mixed strategies and if $\mathcal{s} =(s_1,\cdots ,s_n )$ then $P_i (\mathcal{s} )$ shall mean $P_i (s_1,s_2,\cdots ,s_n )$. Such an $n$-tuple, $\mathcal{s} $, will also be regarded as as point in a vector space, which space could be obtained by multiplying together the vector spaces containing the mixed strategies. And the set of all such $n$-tuples forms, of course, a convex polytope, the product of the simplices representing the mixed strategies.
+
+   For convenience we introduce the substitution notation $(\mathcal{s} ;\mathcal{t} _i )$ to stand for $(s_1,s_2,\cdots ,s_{i-1}, t_i ,s_{i+1},\cdots ,s_n )$ where $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$. The effect of successive substitutions $((\mathcal{s} _i ;t_i );v_j )$ we indicate by $(\mathcal{s} ;t_i ;v_j )$, etc.
+   \begin{definition}[Equilibrium Points]
+      An $n$-tuple $\mathcal{s} $ is an \textbf{equilibrium point} if and only if for every $i$ 
+      \begin{equation}
+          P_i (\mathcal{s} )= \underset{\text{all} \, v_i \text{'s} }{\operatorname{max}}\left[ P_i (\mathcal{s} ;v_i ) \right] .
+      \end{equation}
+\thispagestyle{empty}
+      Thus an equilbrium point is an $n$-tuple $\mathcal{s} $ such that each player's mixed strategy maximizes his pay-off if the strategies of the others are held fixed. Thus each player's strategy is optimal against those of the others. We shall occasionally abbreviate equilibrium point by eq.\ pt.
+   \end{definition}
+   We say that a mixed strategy $s_i $ \textbf{uses} a pure strategy $\pi_{i\beta }$ if $s_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha }$ and $c_{i\beta }>0$. If $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$ and $s_i $ uses $\pi_{i\alpha }$ we also say that $\mathcal{s} $ uses $\pi_{i\alpha }$.
+
+   From the linearity of $P_i (s_1,\cdots ,s_n )$ in $S_i $, 
+   \begin{equation}
+       \underset{\text{all} \, v_i \text{'s} }{\operatorname{max}} \left[ P_i (\mathcal{s} ;v_i ) \right] = \underset{\alpha }{\operatorname{max}} \left[ P_i (\mathcal{s} ;\pi_{i\alpha }) \right] .
+   \end{equation}
+   We define $P_{i\alpha }(\mathcal{s} )=P_i (\mathcal{s} ;\pi_{i\alpha })$. Then we obtain the following trivial necessary and sufficient condition for $\mathcal{s} $ to be an equilibrium point: 
+   \begin{equation}\label{equib}
+       P_i (\mathcal{s} )= \underset{\alpha }{\operatorname{max}} \, P_{i\alpha }(\mathcal{s} ).
+   \end{equation}
+   If $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$ and $s_i =\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha }$ then $P_i (\mathcal{s} )=\sum_{\alpha }^{} c_{i\alpha }P_{i\alpha }(\mathcal{s} )$, consequently for \eqref{equib} to hold we must have $c_{i\alpha }=0$ whenever $P_{i\alpha }(\mathcal{s} )< \underset{\beta }{\operatorname{max}} \, P_{i\alpha }(\mathcal{s} )  $, which is to say that $\mathcal{s} $ does not use $\pi_{i\alpha }$ unless it is an optimal pure strategy for player $i$. So we write 
+   \begin{equation}\label{suf}
+       \text{if} \ \pi_{i\alpha } \ \text{is used in} \ \mathcal{s} \ \text{then} \ P_{i\alpha }(\mathcal{s} )=\underset{\beta }{\operatorname{max}} \, P_{i\beta }(\mathcal{s} )
+   \end{equation}
+   as another necessary and sufficient condition for an equilibrium point.
+
+   Since a criterion \eqref{equib} for an eq. pt. can be expressed as the equating of two continuous functions on the space of $n$-tubles $\mathcal{s} $ the eq. pts. obviously form a closed subset of this space. Actually, this subset is formed from a number of pieces of algebraic varieties, cut out by other algebraic varieties.
+
+   \section{Existence of Equilibrium Points}
+   I have previously published in [Proc.\ N.\ A.\ S.\ 36 (1950) 48-49] \cite{2} a proof of the result below based on Kakutani's generalized fixed point theorem. The proof given here uses the Brouwer theorem.
+
+   The method is to set up a sequence of continuous mappings: $\mathcal{s} \to \mathcal{s} '(\mathcal{s} ,1);\ \mathcal{s} \to \mathcal{s} '(\mathcal{s} ,2); \cdots $ whose fixed points have an equilibrium point as a limit points. A limit mapping exists, but is discontinuous, and need not have any fixed points.
+\begin{theorem}
+    Every finite game has an equilibrium point.
+\end{theorem}
+\begin{proof}
+    Using our standard notation, let $\mathcal{s} $ be an $n$-tuple of mixed strategies, and $P_{i\alpha }(\mathcal{s} )$ the pay-off to player $i$ if he uses his pure strategy $\pi_{i\alpha }$ and the others use their respective mixed strategies in $\mathcal{s} $. For each integer $\lambda$ we define the following continuous functions of $\mathcal{s} $: 
+    \begin{gather*}
+        q_i (\mathcal{s} )= \underset{\alpha }{\operatorname{max}} \, P_{i\alpha }(\mathcal{s} ), \\
+        \phi_{i\alpha }(\mathcal{s} ,\lambda )= P_{i\alpha }(\mathcal{s}) -q_i (\mathcal{s} )+ \frac{1}{\lambda}, \ \text{and} \\
+        \phi_{i\alpha }^+ (\mathcal{s} ,\lambda)=\operatorname{max}\left[ 0,\phi_{i\alpha }(\mathcal{s} ,\lambda) \right] .
+    \end{gather*}
+    Now $\sum_{\alpha }^{} \phi_{i\alpha }^+ (\mathcal{s} ,\lambda)\geq \underset{\alpha }{\max} \, \phi_{i\alpha }^+(\mathcal{s} ,\lambda)=\frac{1}{\lambda}>0$ so that $c_{i\alpha }'(\mathcal{s} ,\lambda)= \frac{\phi_{i\alpha }^+ (\mathcal{s} ,\lambda)}{\sum_{\beta }^{} \phi_{i\beta }^+(\mathcal{s} ,\lambda)}$ is continuous. Define $s'_i (\mathcal{s} ,\lambda)=\sum_{\alpha }^{} \pi_{i\alpha }c'_{i\alpha }(\mathcal{s} ,\lambda)$ and $\mathcal{s} '(\mathcal{s} ,\lambda)=(s_1',s_2',\cdots ,s_n ')$. Since all the operations have preserved continuity, the mapping $\mathcal{s} \to \mathcal{s} '(\mathcal{s} ,\lambda)$ is continuous; and since the space of $n$-tuples, $\mathcal{s} $, is a cell, there must be a fixed point for each $\lambda$. Hence there will be a subsequence  $\lambda_{\mu}$, converging to $\mathcal{s} ^*$, where $\mathcal{s} _{\mu}$ is fixed under the mapping $\mathcal{s} \to \mathcal{s} '(\mathcal{s} ,\lambda _{(\mu)})$. 
+
+    Now supposed $\mathcal{s} ^*$ were not an equilibrium point. Then if $\mathcal{s} ^*=(s_1^*,\cdots ,s_n ^*)$ some component $s_i ^*$ must be non-optimal against the others, which means $s_i ^*$ uses some pure strategy $\pi_{i\alpha }$ which is non-optimal [see \eqref{suf}]. This means that $P_{i\alpha }(\mathcal{s} ^*)<q_i (\mathcal{s} ^*)$ which justifies writing $P_{i\alpha }(\mathcal{s} ^*)-q_i (\mathcal{s} ^*)<-\epsilon$.
+
+    From continuity, if $\mu$ is large enough,
+    \[
+        \Big| \left[ P_{i\alpha }(\mathcal{s} _{\mu}) -q_i (\mathcal{s} _{\mu})\right] -\left[ P_{i\alpha }(\mathcal{s} ^*)-q_i (\mathcal{s} ^*) \right] \Big| < \frac{\epsilon}{2} \quad \text{and} \quad \frac{1}{\lambda _{(\mu)}}< \frac{\epsilon }{2}.
+    \] Adding, $P_{i\alpha }(\mathcal{s} _{\mu})-q_i (\mathcal{s} _{\mu})+\frac{1}{\lambda_{(\mu)}}<0$ which is simply $\phi_{i\alpha }(\mathcal{s} _{\mu},\lambda_{(\mu)})<0$, whence $\phi_{i\alpha }^+(\mathcal{s} _{\mu},\lambda_{(\mu)})=0$, whence $c_{i\alpha }'(\mathcal{s} _{\mu},\lambda_{(\mu)})=0$. From this last equation we know that $\pi_{i\alpha }$ is not used in $\mathcal{s} _{\mu}$ since $\mathcal{s} _{\mu}=\sum_{\alpha }^{} \pi_{i\alpha }c_{i\alpha }'(\mathcal{s} _{\mu},\lambda_{(\mu)})$, because $\mathcal{s} _{\mu}$ is a fixed point.
+
+    And since $\mathcal{s} _{\mu}\to \mathcal{s} ^*$, $\pi_{i\alpha }$ is not used in $\mathcal{s} ^*$, which contradicts our assumption. Hence $\mathcal{s} ^*$ is a fixed point.
+\end{proof}
+
