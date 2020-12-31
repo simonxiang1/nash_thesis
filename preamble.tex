@@ -8,12 +8,16 @@
 \usepackage{enumitem}
 
 \usepackage{tocloft}
+\setcounter{tocdepth}{1}
 \renewcommand{\cftsecfont}{\color{black}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-\usepackage{titlesec}
+\usepackage[center]{titlesec}
+\titleformat{\section}{\normalfont\centering\Large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalfont\centering\Large\bfseries}{}{0pt}{}
 
 %microtype, font, color support, cl
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage{biblatex}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
