@@ -23,7 +23,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
 \begin{definition}[Finite Game]
     For us an $\mathbf n$\textbf{-person game} will be a set of $n$ \textbf{players}, or \textbf{positions}, each with an associated finite of \textbf{pure strategies}; and corresponding to each player, $i$, a \textbf{pay-off function}, $P_i $, which maps the set of all $n$-tuples of pure strategies into the real numberes. When we use the word $\mathbf n$\textbf{-tuples} we shall always mean a set of $n$ items, with each item associated with a different player.
 \end{definition}
-\begin{definition}[Mixed Strategy, $s_i $]
+\begin{definition}[Mixed Strategy, $S_i $]
    A \textbf{mixed strategy} of player $i$ will be a collection of non-negative numbers which have unit sum and are in one to one correspondence with his pure strategies.
 \end{definition}
    We write $s_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha } $ with $\sum_{\alpha }^{} c_{i\alpha }=1 $ and $c_{i\alpha }\geq 0$ to represent such a mixed strategy, where the $\pi_{i\alpha }$'s are the pure strategies of player $i$. We regard the $s_i $'s as points in a simplex whose vertices are the $\pi_{i\alpha }$'s. This simplex may be regarded as a convex subset of a real vector space, giving us a natural process of linear combination for the mixed strategies.
@@ -38,7 +38,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
    For convenience we introduce the substitution notation $(\mathcal{s} ;\mathcal{t} _i )$ to stand for $(s_1,s_2,\cdots ,s_{i-1}, t_i ,s_{i+1},\cdots ,s_n )$ where $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$. The effect of successive substitutions $((\mathcal{s} _i ;t_i );v_j )$ we indicate by $(\mathcal{s} ;t_i ;v_j )$, etc.
    \begin{definition}[Equilibrium Points]
       An $n$-tuple $\mathcal{s} $ is an \textbf{equilibrium point} if and only if for every $i$ 
-      \begin{equation}
+      \begin{equation}\label{eqpt}
           P_i (\mathcal{s} )= \underset{\text{all} \, v_i \text{'s} }{\operatorname{max}}\left[ P_i (\mathcal{s} ;v_i ) \right] .
       \end{equation}
 \thispagestyle{empty}
@@ -85,6 +85,166 @@ The motivation and interpretation of the mathematical concepts employed in the t
         \Big| \left[ P_{i\alpha }(\mathcal{s} _{\mu}) -q_i (\mathcal{s} _{\mu})\right] -\left[ P_{i\alpha }(\mathcal{s} ^*)-q_i (\mathcal{s} ^*) \right] \Big| < \frac{\epsilon}{2} \quad \text{and} \quad \frac{1}{\lambda _{(\mu)}}< \frac{\epsilon }{2}.
     \] Adding, $P_{i\alpha }(\mathcal{s} _{\mu})-q_i (\mathcal{s} _{\mu})+\frac{1}{\lambda_{(\mu)}}<0$ which is simply $\phi_{i\alpha }(\mathcal{s} _{\mu},\lambda_{(\mu)})<0$, whence $\phi_{i\alpha }^+(\mathcal{s} _{\mu},\lambda_{(\mu)})=0$, whence $c_{i\alpha }'(\mathcal{s} _{\mu},\lambda_{(\mu)})=0$. From this last equation we know that $\pi_{i\alpha }$ is not used in $\mathcal{s} _{\mu}$ since $\mathcal{s} _{\mu}=\sum_{\alpha }^{} \pi_{i\alpha }c_{i\alpha }'(\mathcal{s} _{\mu},\lambda_{(\mu)})$, because $\mathcal{s} _{\mu}$ is a fixed point.
 
-    And since $\mathcal{s} _{\mu}\to \mathcal{s} ^*$, $\pi_{i\alpha }$ is not used in $\mathcal{s} ^*$, which contradicts our assumption. Hence $\mathcal{s} ^*$ is a fixed point.
+    And since $\mathcal{s} _{\mu}\to \mathcal{s} ^*$, $\pi_{i\alpha }$ is not used in $\mathcal{s} ^*$, which contradicts our assumption. Hence $\mathcal{s} ^*$ is indeed an equilibrium point.
 \end{proof}
+\section{Symmetries of Games}
+\hspace{\parindent}An \textbf{automorphism}, or \textbf{symmetry}, of a game will be a permutation of its pure strategies which satisfies certain conditions, given below.
 
+If two strategies belong to a single player they must go into two strategies belonging to a single player. Thus if $\phi$ is the permutation of the pure strategies it induces a permutation $\psi$ of the players. 
+
+Each $n$-tuple of pure strategies is therefore permuted into another $n$-tuple of pure strategies. We may call $\chi$ the induced permutation of these $n$-tupless. Let $\xi$ denote an $n$-tuple of pure strategies and $P_i (\xi)$ the pay-off to player $i$ when the $n$-tuple $\xi$ is employed. We require that if \[
+    j=i^{\psi} \quad \text{then} \quad P_j (\xi^{\chi})=P_i (\xi)
+\] which completes the definition of a symmetry.
+
+The permutation $\phi$ has a unique linear extension to the mixed strategies. If $s_i =\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha }$ we define $(s_i )^{\phi}=\sum_{\alpha }^{} c_{i\alpha }(\pi_{i\alpha })^{\phi}.$ The extension of $\phi$ to the mixed strategies clearly generates an extension of $\chi$ to the $n$-tuples of mixed strategies. We shall also denote this by $\chi$.
+
+We define a \textbf{symmetric} $\mathbf n$\textbf{-tuple} $\mathcal{s} $ of a game by $\mathcal{s} ^{\chi}=\mathcal{s} $ for all $\chi$'s, it being understood that $\chi$ means a permutation derived from a symmetry $\phi$.
+\begin{theorem}
+    Any finite game has a symmetric equilibrium point.
+\end{theorem}
+\begin{proof}
+    First we note that $s_{i0}=\frac{\sum_{\alpha }^{} \pi_{j\alpha }}{\sum_{\alpha }^{} 1}$ has the property $\left( s_{i0} \right) ^{\phi}=s_{j0}$ where $j=i^{\psi}$, so that the $n$-tuple $\mathcal{s}_0=(s_{10},s_{20},\cdots ,s_{n0})$ is fixed under any $\chi$; hence any game has at least one symmetric $n$-tuple. 
+
+    If $\mathcal{s} =(s_1,\cdots ,s_n )$ and $\mathcal{t} =(t_1,\cdots ,t_n )$ are symmetric then $\frac{\mathcal{s} +\mathcal{t} }{2}=\left( \frac{s_1+t_1}{2},\cdots ,\frac{s_n +t_n }{2} \right) $ is so too because $\mathcal{s} ^{\chi}=\mathcal{s} \iff s_j =(s_i )^{\phi}$ where $j=i^{\psi}$, hence \[
+            \frac{s_j +t_j }{2}=\frac{(s_i )^{\phi}+(t_i )^{\phi}}{2}=\left( \frac{s_i +t_i }{2} \right) ^{\phi}, \quad \text{hence} \quad \left( \frac{\mathcal{s} +\mathcal{t} }{2} \right) ^{\chi}=\frac{\mathcal{s} +\mathcal{t} }{2}.
+    \] This shows that the set of symmetric $n$-tuples is a convex subset of the space of $n$-tuples since it is obviously closed.
+
+    Now observe that for each $\lambda$ the mapping $\mathcal{s} \to \mathcal{s} '(\mathcal{s} , \lambda)$ used in the proof of existence theorem was intrinsically defined. Therefore, if $\mathcal{s}_2=\mathcal{s} '(\mathcal{s} _1,\lambda)$ and $\chi$ is an automorphism of the game we will have $\mathcal{s} _2^{\chi}=\mathcal{s} '(\mathcal{s} _1^{\chi},\lambda)$. If $\mathcal{s} _1$ is symmetric $\mathcal{s} _1=\mathcal{s} _1$ and therefore $\mathcal{s} _2^{\chi}=\mathcal{s} '(\mathcal{s} _1,\lambda)=\mathcal{s} _2$. Consequently this mapping maps the set of symmetric $n$-tuples to itself. 
+
+    Since this set is a cell there must be a symmetric fixed point of $\mathcal{s} _{\lambda}$. And, as in the proof of the existence theorem we could obtain a limit point $\mathcal{s} ^*$ which would have to be symmetric.
+\end{proof}
+\section{Solutions}
+\hspace{\parindent}We define here solutions, strong solutions, and sub-solutions. A non-cooperative game does not always have a solution, but when it does the solution is unique. Strong solutions are solutions with special properties. Sub-solutions always exist and have many of the properties of solutions, but lack uniqueness.
+
+$S_i $ will denote a set of mixed strategies of player $i$ and $\mathcal{S} $ a set of $n$-tuples of mixed strategies. 
+
+\begin{definition}[Solvability]
+    A game is solvable if its set, $\mathcal{S} $, of equilibrium points satisfies the condition 
+    \begin{equation}\label{solvable}
+        (\mathcal{t} ; v_i ) \in \mathcal{S}  \ \text{and}\ \mathcal{s} \in \mathcal{S}  \implies  (\mathcal{s} ; v_i )\in \mathcal{S} \ \text{for all} \ i\text{'s}.
+    \end{equation}
+\end{definition}
+This is called the \textbf{interchangeability} condition. The \textbf{solution} of a solvable game is its set, $\mathcal{S} $, of equilibrium points.
+\begin{definition}[Strong Solvability]
+    A game is \textbf{strongly solvable} if it has a solution, $\mathcal{S} $, such that for all $i$'s \[
+        \mathcal{s} \in \mathcal{S} \ \text{and} \ P_i (\mathcal{s} ;v_i )=P_i (\mathcal{s} )\implies (\mathcal{s} ;v_i )\in \mathcal{S} 
+    \] and then $\mathcal{S} $ is called a \textbf{strong solution}.
+\end{definition}
+\begin{definition}[Equilibrium Strategies]
+    In a solvable game set $S_i $ be the set of all mixed strategies $s_i $ such that for some $\mathcal{t} $ the $n$-tuple $(\mathcal{t} ;s_i )$ is an equilibrium point. [$s_i $ is the $i$th component of some equilibrium point.] We call $S_i $ the set of \textbf{equilibrium strategies} of player $i$.
+\end{definition}
+\begin{definition}[Sub-solutions]
+    If $\mathcal{S} $ is a subset of the set of equilibrium points of a game and satisfies condition \eqref{solvable}; and if $\mathcal{S} $ is maximal relative to this property then we call $\mathcal{S} $ a \textbf{sub-solution}. 
+
+For any sub-solution $\mathcal{S} $ we define the $i$th \textbf{factor set}, $S_i $, as the set of all $s_i $'s such that $\mathcal{S} $ contains $(\mathcal{t} ;s_i )$ for some $\mathcal{t} $.
+\end{definition}
+
+Note that a sub-solution, when unique, is a solution; and its factor sets are the sets of equilibrium strategies.
+\begin{theorem}\label{factor}
+    A sub-solution, $\mathcal{S} $, is the set of all $n$-tuples $(s_1,s_2,\cdots ,s_n )$ such that each $s_i \in S_i $ where $S_i $ is the $i$th factor set of $\mathcal{S} $. Geometrically, $\mathcal{S} $ is the product of its factor sets.
+\end{theorem}
+\begin{proof}
+    Consider such an $n$-tuple $(s_1,\cdots ,s_n )$. By definition $\exists \mathcal{t}_1 , \mathcal{t_2} ,\cdots ,\mathcal{t}_n $ such that for each $i \ (\mathcal{t} _i ; s_i )\in \mathcal{S} $. Using the condition \eqref{solvable} $n-1$ times we obtain successively $\mathcal{t_1} ;s_1;s_2)\in \mathcal{S} ,\cdots , (\mathcal{t}_1;s_1;s_2;s_3;\cdots ;s_n )\in \mathcal{S} $ and the last is simply $(s_1,s_2,\cdots ,s_n )\in \mathcal{S} $, which we needed to show.
+\end{proof}
+\begin{theorem}
+    The factor sets $S_1,S_2,\cdots ,S_n $ of a sub-solution are closed and convex as subsets of the mixed strategy space.
+\end{theorem}
+\begin{proof}
+    It suffices to show two things: 
+    \begin{enumerate}[label=(\alph*)]
+        \item if $s_i $ and $s_i '\in S_i $ then $s_i ^*=(s_i +s_i ')/2 \in S_i $;
+        \item if $s_i ^{\#}$ is a limit point of $S_i $ then $s_i ^{\#}\in S_i $.
+    \end{enumerate}
+ \hspace{\parindent}Let $\mathcal{t} \in \mathcal{S} $. Then we have $P_j (\mathcal{t} ;s_i )\geq P_j (\mathcal{t} ;s_i ;v_j )$ and $P_j (\mathcal{t} ;s_i )\geq P_j (\mathcal{t} ;s_i ';v_j)$ for any $v_j $, by using the criterion of \eqref{eqpt} for an eq. pt. Adding these inequalities, using the linearity of $P_j (s_1,\cdots ,s_n )$ in $S_i $, and dividing by 2, we get $P_j (\mathcal{t} ;s_i ^*)\geq P_j (\mathcal{t} ;s_i ^*;v_j )$ since $s_i ^*= (s_i +s_i ')/2$. From this we know that $(\mathcal{t} ;s_i ^*)$ is an eq. pt. for any $t\in \mathcal{S} $. If the set of all such eq. pts. $(\mathcal{t} ;s_i ^*)$ is added to $\mathcal{S} $ the augmented set clearly satisfies condition \eqref{solvable}, and since $\mathcal{S} $ was to be maximal it follows that $s_i ^*\in S_i $.
+
+ To attack (b) note that the $n$-tuple $(\mathcal{t} ;s_i ^{\#})$, where $\mathcal{t} \in \mathcal{S} $ will be a limit point of the set of $n$-tuples of the form $(\mathcal{t} ; s_i )$ where $s_i \in S_i $, since $s_i ^{\#}$ is a limit point of $S_i $. But this set is a set of eq. pts. and hence any point in its closure is an eq. pt., since the set of all eq. pts. is closed [see pg. 3]. Therefore $(\mathcal{t} ; s_i ^{\#})$ is an eq. pt. and hence $s_i ^{\#}\in S_i $ from the same argument as for $s_i ^*$.
+\end{proof}
+\begin{definition}[Values]
+    Let $\mathcal{S} $ be the set of equilibrium points of a game. We define \[
+        v_i ^+ = \underset{\mathcal{s} \in \mathcal{S} }{\max} \left[ P_i (\mathcal{s} ) \right] , \quad v_i ^- = \underset{\mathcal{s} \in \mathcal{S} }{\min} \left[ P_i (\mathcal{s} ) \right] .
+    \] If $v_i ^+=v_i ^-$ we write $v_i =v_i ^+=v_i ^-$. $v_i ^+$ is the \textbf{upper value} to player $i$ of the game; $v_i ^-$ the \textbf{lower value}; and $v_i $ the \textbf{value}, if it exists.
+
+Values will obviously have to exist if there is but one equilibrium point.
+\end{definition}
+One can define \textbf{associated values} for a sub-solution by restricting $\mathcal{S} $ to the eq. pts. in the sub-solution and then using the same defining equations as above. 
+
+A two-person zero-sum game is always solvable in the sense defined above. The sets of equilibrium strategies $S_1 $ and $S_2$ are simply the sets of ``good'' strategies. Such a game is not generally strongly solvable; strong solutions exist only when there is a ``saddle point'' in \emph{pure} strategies.
+
+\section{Geometrical Form of Solutions}
+\hspace{\parindent}In the two-person zero-sum case it has been shown that the set of ``good'' strategies of a player is a convex polyhedral subset of his strategy spaces. We shall obtain the same result for a player's set of equilibrium strategies in any solvable game.
+
+\begin{theorem}
+    The sets $S_1 ,S_2,\cdots ,S_n $ of equilibrium strategies in a solvable game are polyhedral convex subsets of the respective mixed strategy spaces. 
+\end{theorem}
+\begin{proof}
+    An $n$-tuple $\mathcal{s} $ will be an equilibrium point if and only if for every $i$ 
+    \begin{equation}
+        P_i (\mathcal{s} ) = \underset{\alpha }{\max} \, P_{i\alpha }(\mathcal{s} )
+    \end{equation}
+    which is condition \eqref{equib}. An equivalent condition is for every $i$ and $\alpha $ 
+    \begin{equation}\label{eqq}
+        P_i (\mathcal{s} ) - P_{i\alpha }(\mathcal{s} ) \geq 0.
+    \end{equation}
+    Let us now consider the form of the set $S_j $ of the equilibrium strategies, $s_j $, of player $j$. Let $\mathcal{t} $ be any equilibrium point, then $(\mathcal{t} ;s_j )$ will be an equilibrium point if and only if $s_j \in S_j $, from Theorem \eqref{factor}. We now apply condition \eqref{eqq} to $(\mathcal{t} ;S_j )$, obtaining
+    \begin{equation}
+        s_j \in S_j  \iff \text{for all} \ i,\alpha \quad P_i (\mathcal{t} ;s_j )-P_{i\alpha }(\mathcal{t} ;s_j )\geq 0.
+    \end{equation}
+    Since $P_i $ is $n$-linear and $\mathcal{t} $ is constant these are a set of linear inequalities of the form $F_{i\alpha }(s_j )\geq 0$. Each such inequality is either satisfied for all $s_j $ or for those lying on and to one side of some hyperplane passing through the strategy simplex. Therefore, the complete set [which is finite] of conditions will all be satisfied simultaneously on some convex polyhedral set of player $j$'s strategy simplex. [Intersection of half-spaces.]
+
+    As a corollary we may conclude that $S_k $ is the convex closure of a finite set of mixed strategies [vertices].
+\end{proof}
+\section*{Simple Examples}
+\hspace{\parindent}These are intended to illustrate the concepts defined in the paper and display special phenomena which occur in the game.
+
+The first player has the roman letter strategies and the pay-off to the left, etc.
+\begin{example}
+    \,
+                \begin{figure}[htbp]
+  \begin{minipage}[c]{0.25\linewidth}
+      \!\!\!
+    \begin{tabular}{cccc}
+        5 &   $a$ &  $\alpha $ & -3 \\
+        -4 & $a$ & $\beta $ & 10\\
+        -5 & $b$ & $\alpha $ &5\\
+        3 & $b$ & $\beta $ &-4
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}[c]{0.65\linewidth}
+      \centering\text{Weak Solutions: $\left( \frac{9}{16}a+\frac{7}{16}b, \frac{7}{17}\alpha +\frac{10}{17}\beta \right) $.}\vspace{0.2cm}\newline\text{$\ v_1=-\frac{5}{17}, \ v_2=+\frac{1}{2}$}
+  \end{minipage}
+\end{figure}
+\end{example}
+\begin{example}
+    \,
+                \begin{figure}[htbp]
+  \begin{minipage}[c]{0.25\linewidth}
+      \!\!\!
+    \begin{tabular}{cccc}
+        1 &   $a$ &  $\alpha $ & 1 \\
+        -10 & $a$ & $\beta $ & 10\\
+       10 & $b$ & $\alpha $ &-10\\
+        -1 & $b$ & $\beta $ &-1
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}[c]{0.65\linewidth}
+     \centering \text{Strong Solution: $(b,\beta) $.}\vspace{0.2cm}\newline\text{$v_1=v_2=-1$}
+  \end{minipage}
+\end{figure}
+\end{example}
+\begin{example}
+    \,
+                \begin{figure}[htbp]
+  \begin{minipage}[c]{0.25\linewidth}
+      \!\!\!
+    \begin{tabular}{cccc}
+        1 &   $a$ &  $\alpha $ & 1 \\
+        -10 & $a$ & $\beta $ & 10\\
+       10 & $b$ & $\alpha $ &-10\\
+        -1 & $b$ & $\beta $ &-1
+    \end{tabular}
+  \end{minipage}
+  \begin{minipage}[c]{0.65\linewidth}
+     \centering \text{Strong Solution: $(b,\beta) $.}\vspace{0.2cm}\newline\text{$v_1=v_2=-1$}
+  \end{minipage}
+\end{figure}
+\end{example}
