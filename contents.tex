@@ -31,12 +31,12 @@ The motivation and interpretation of the mathematical concepts employed in the t
    We shall use the suffixes $i,j,k$ for players and $\alpha ,\beta ,\gamma $ to indicate various pure strategies of a player. The symbols $s_i ,t_i ,$ and $v_i $, etc.\ will indicate mixed strategies; $\pi_{i\alpha }$ will indicate the $i$th player's $\alpha $th pure strategy, etc.
 
    \begin{definition}[Pay-off functions, $P_i $]
-       The pay-off function, $P_i $, used in the definition of a finite game above, has a unique extension to the $n$-tuples of mixed strategies which is linear in the mixed strategy of each player [$n$-linear]. This extension we shall also denote $P_i $, writing $P_i (s_1,s_2,\cdots ,s_n )$.
+       The pay-off function, $P_i $, used in the definition of a finite game above, has a unique extension to the $n$-tuples of mixed strategies which is linear in the mixed strategy of each player [$n$-linear]. This extension we shall also denote by $P_i $, writing $P_i (s_1,s_2,\cdots ,s_n )$.
    \end{definition}
-   We shall write $\mathcal{s} $ or $\mathcal{t} $ to denote an $n$-tuble of mixed strategies and if $\mathcal{s} =(s_1,\cdots ,s_n )$ then $P_i (\mathcal{s} )$ shall mean $P_i (s_1,s_2,\cdots ,s_n )$. Such an $n$-tuple, $\mathcal{s} $, will also be regarded as as point in a vector space, which space could be obtained by multiplying together the vector spaces containing the mixed strategies. And the set of all such $n$-tuples forms, of course, a convex polytope, the product of the simplices representing the mixed strategies.
+   We shall write $\mathcal{s} $ or $\mathcal{t} $ to denote an $n$-tuple of mixed strategies and if $\mathcal{s} =(s_1,\cdots ,s_n )$ then $P_i (\mathcal{s} )$ shall mean $P_i (s_1,s_2,\cdots ,s_n )$. Such an $n$-tuple, $\mathcal{s} $, will also be regarded as point in a vector space, which space could be obtained by multiplying together the vector spaces containing the mixed strategies. And the set of all such $n$-tuples forms, of course, a convex polytope, the product of the simplices representing the mixed strategies.
 
    For convenience we introduce the substitution notation $(\mathcal{s} ;\mathcal{t} _i )$ to stand for $(s_1,s_2,\cdots ,s_{i-1}, t_i ,s_{i+1},\cdots ,s_n )$ where $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$. The effect of successive substitutions $((\mathcal{s} _i ;t_i );v_j )$ we indicate by $(\mathcal{s} ;t_i ;v_j )$, etc.
-   \begin{definition}[Equilibrium Points]
+   \begin{definition}[Equilibrium Point]
       An $n$-tuple $\mathcal{s} $ is an \textbf{equilibrium point} if and only if for every $i$ 
       \begin{equation}\label{eqpt}
           P_i (\mathcal{s} )= \underset{\text{all} \, v_i \text{'s} }{\operatorname{max}}\left[ P_i (\mathcal{s} ;v_i ) \right] .
@@ -60,7 +60,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
    \end{equation}
    as another necessary and sufficient condition for an equilibrium point.
 
-   Since a criterion \eqref{equib} for an eq. pt. can be expressed as the equating of two continuous functions on the space of $n$-tubles $\mathcal{s} $ the eq. pts. obviously form a closed subset of this space. Actually, this subset is formed from a number of pieces of algebraic varieties, cut out by other algebraic varieties.
+   Since a criterion \eqref{equib} for an eq. pt. can be expressed as the equating of two continuous functions on the space of $n$-tuples $\mathcal{s} $ the eq. pts. obviously form a closed subset of this space. Actually, this subset is formed from a number of pieces of algebraic varieties, cut out by other algebraic varieties.
 
    \section{Existence of Equilibrium Points}
    I have previously published in [Proc.\ N.\ A.\ S.\ 36 (1950) 48-49] \cite{2} a proof of the result below based on Kakutani's generalized fixed point theorem. The proof given here uses the Brouwer theorem.
