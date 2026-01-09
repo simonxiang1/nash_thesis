@@ -21,7 +21,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
 \section{Formal Definitions and Terminology}
 \hspace{\parindent}In this section we define the basic concepts of this paper and set up standard terminology and notation. Important definitions will be preceeded by a subtitle indicating the concept defined\footnote{We actually use \textbf{boldface} for definitions instead, but this note on the subtitles is left in to preserve the wording of the original.}. The non-cooperative idea will be implicit, rather than explicit, below.
 \begin{definition}[Finite Game]
-    For us an $\mathbf n$\textbf{-person game} will be a set of $n$ \textbf{players}, or \textbf{positions}, each with an associated finite of \textbf{pure strategies}; and corresponding to each player, $i$, a \textbf{pay-off function}, $P_i $, which maps the set of all $n$-tuples of pure strategies into the real numberes. When we use the word $\mathbf n$\textbf{-tuples} we shall always mean a set of $n$ items, with each item associated with a different player.
+    For us an $\mathbf n$\textbf{-person game} will be a set of $n$ \textbf{players}, or \textbf{positions}, each with an associated finite of \textbf{pure strategies}; and corresponding to each player, $i$, a \textbf{pay-off function}, $P_i $, which maps the set of all $n$-tuples of pure strategies into the real numbers. When we use the term $\mathbf n$\textbf{-tuples} we shall always mean a set of $n$ items, with each item associated with a different player.
 \end{definition}
 \begin{definition}[Mixed Strategy, $S_i $]
    A \textbf{mixed strategy} of player $i$ will be a collection of non-negative numbers which have unit sum and are in one to one correspondence with his pure strategies.
@@ -33,7 +33,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
    \begin{definition}[Pay-off functions, $P_i $]
        The pay-off function, $P_i $, used in the definition of a finite game above, has a unique extension to the $n$-tuples of mixed strategies which is linear in the mixed strategy of each player [$n$-linear]. This extension we shall also denote by $P_i $, writing $P_i (s_1,s_2,\cdots ,s_n )$.
    \end{definition}
-   We shall write $\mathcal{s} $ or $\mathcal{t} $ to denote an $n$-tuple of mixed strategies and if $\mathcal{s} =(s_1,\cdots ,s_n )$ then $P_i (\mathcal{s} )$ shall mean $P_i (s_1,s_2,\cdots ,s_n )$. Such an $n$-tuple, $\mathcal{s} $, will also be regarded as point in a vector space, which space could be obtained by multiplying together the vector spaces containing the mixed strategies. And the set of all such $n$-tuples forms, of course, a convex polytope, the product of the simplices representing the mixed strategies.
+   We shall write $\mathcal{s} $ or $\mathcal{t} $ to denote an $n$-tuple of mixed strategies and if $\mathcal{s} =(s_1,\cdots ,s_n )$ then $P_i (\mathcal{s} )$ shall mean $P_i (s_1,s_2,\cdots ,s_n )$. Such an $n$-tuple, $\mathcal{s} $, will also be regarded as a point in a vector space, which space could be obtained by multiplying together the vector spaces containing the mixed strategies. And the set of all such $n$-tuples forms, of course, a convex polytope, the product of the simplices representing the mixed strategies.
 
    For convenience we introduce the substitution notation $(\mathcal{s} ;\mathcal{t} _i )$ to stand for $(s_1,s_2,\cdots ,s_{i-1}, t_i ,s_{i+1},\cdots ,s_n )$ where $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$. The effect of successive substitutions $((\mathcal{s} _i ;t_i );v_j )$ we indicate by $(\mathcal{s} ;t_i ;v_j )$, etc.
    \begin{definition}[Equilibrium Point]
@@ -42,7 +42,7 @@ The motivation and interpretation of the mathematical concepts employed in the t
           P_i (\mathcal{s} )= \underset{\text{all} \, v_i \text{'s} }{\operatorname{max}}\left[ P_i (\mathcal{s} ;v_i ) \right] .
       \end{equation}
 \thispagestyle{empty}
-      Thus an equilbrium point is an $n$-tuple $\mathcal{s} $ such that each player's mixed strategy maximizes his pay-off if the strategies of the others are held fixed. Thus each player's strategy is optimal against those of the others. We shall occasionally abbreviate equilibrium point by eq.\ pt.
+      Thus an equilibrium point is an $n$-tuple $\mathcal{s} $ such that each player's mixed strategy maximizes his pay-off if the strategies of the others are held fixed. Thus each player's strategy is optimal against those of the others. We shall occasionally abbreviate equilibrium point by eq.\ pt.
    \end{definition}
    We say that a mixed strategy $s_i $ \textbf{uses} a pure strategy $\pi_{i\beta }$ if $s_i=\sum_{\alpha }^{} c_{i\alpha }\pi_{i\alpha }$ and $c_{i\beta }>0$. If $\mathcal{s} =(s_1,s_2,\cdots ,s_n )$ and $s_i $ uses $\pi_{i\alpha }$ we also say that $\mathcal{s} $ uses $\pi_{i\alpha }$.
 
